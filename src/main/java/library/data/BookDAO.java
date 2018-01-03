@@ -6,7 +6,7 @@ import library.model.Book;
 
 public interface BookDAO {
 	
-	public void insertBook(Book newBook);
+	public void insertBook(Book newBook) throws AlreadyExistException;
 	public void deleteBook(int id) throws BookNotFoudException;
 	public Book findBookById(int id) throws BookNotFoudException;
 	public List<Book> findAllBooks();

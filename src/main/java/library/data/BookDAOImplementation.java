@@ -18,13 +18,13 @@ public class BookDAOImplementation implements BookDAO{
 	private EntityManager em;
 	
 	@Override
-	public void insertBook(Book newBook) {
+	public void insertBook(Book newBook) throws AlreadyExistException {
 		ValidateISBN validate = new ValidateISBN();
 		if((validate.checkISBN(newBook.getISBN())==true) && (findBookByISBN(newBook.getISBN()) == null)) {
 			em.persist(newBook);
 		}
 		else {
-			//throw new AlreadyExistsExeption();
+			throw new AlreadyExistException();
 		}
 		
 	}
