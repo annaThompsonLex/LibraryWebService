@@ -4,8 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.hibernate.validator.constraints.Email;
 
 @Entity
+@XmlRootElement
 public class User {
 	
 	@Id
@@ -15,7 +19,7 @@ public class User {
 	private String firstName;
 	
 	private String lastName;
-	
+	@Email
 	private String email;
 	
 	private String password;
