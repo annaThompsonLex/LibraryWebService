@@ -6,15 +6,15 @@ import library.model.User;
 
 public interface UserDAO {
 	
-	public void insertUser(User newUser);
-	public void deleteUser(int id);
-	public User findUserById(int id);
+	public void insertUser(User newUser) throws AlreadyExsistsException;
+	public void deleteUser(int id) throws UserNotFoundException;
+	public User findUserById(int id) throws UserNotFoundException;
 	public List<User> findAllUsers();
-	public List<User> findUsersByFirstName(String firstName);
-	public List<User> findUsersByLastName(String lastName);
-	public User findUserByEmail(String email);
-	public void updateUserEmail(int id, String newEmail);
-	public void updateUserLastName(int id, String lastName);
+	public List<User> findUsersByFirstName(String firstName) throws UserNotFoundException;
+	public List<User> findUsersByLastName(String lastName) throws UserNotFoundException;
+	public User findUserByEmail(String email) throws UserNotFoundException;
+	public void updateUserEmail(int id, String newEmail) throws UserNotFoundException;
+	public void updateUserLastName(int id, String lastName)throws UserNotFoundException;
 	
 	
 

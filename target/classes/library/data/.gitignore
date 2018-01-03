@@ -5,3 +5,6 @@
 /UserDAO.class
 /BookDAOImplementation.class
 /BookNotFoudException.class
+/AlreadyExsistsException.class
+/UserDAOImplementation.class
+/UserNotFoundException.class
