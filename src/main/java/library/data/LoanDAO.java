@@ -9,6 +9,7 @@ public interface LoanDAO {
 	
 	public void newLoan(Loan loan);
 	public List<Loan> findAllLoans();
+	public List<Loan> findAllExpiredLoans();
 	public List<Loan> findLoansByUserId(int userId);
 	public List<Loan> findLoansByBookId(int bookId);
 	public void updateStatus(boolean status);
