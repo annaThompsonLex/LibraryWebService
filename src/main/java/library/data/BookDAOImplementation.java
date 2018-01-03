@@ -3,6 +3,7 @@ package library.data;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -14,7 +15,7 @@ import library.model.Book;
 @Stateless
 public class BookDAOImplementation implements BookDAO{
 
-	@PersistenceContext
+	@Inject
 	private EntityManager em;
 	
 	@Override
