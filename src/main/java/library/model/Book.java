@@ -24,11 +24,11 @@ public class Book {
 	
 	private String shelf;
 	
-	private int copies;
+	private Integer copies;
 	
 	public Book() {}
 
-	public Book(String iSBN, String title, String author, String genre, String shelf, int copies) {
+	public Book(String iSBN, String title, String author, String genre, String shelf, Integer copies) {
 		super();
 		ISBN = iSBN;
 		this.title = title;
@@ -86,11 +86,11 @@ public class Book {
 		this.shelf = shelf;
 	}
 
-	public int getCopies() {
+	public Integer getCopies() {
 		return copies;
 	}
 
-	public void setCopies(int copies) {
+	public void setCopies(Integer copies) {
 		this.copies = copies;
 	}
 	
