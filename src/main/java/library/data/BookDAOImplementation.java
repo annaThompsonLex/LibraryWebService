@@ -94,7 +94,7 @@ public class BookDAOImplementation implements BookDAO{
 	}
 
 	@Override
-	public void updateNumberOfCopies(int id, int copies) throws BookNotFoudException {
+	public void updateNumberOfCopies(int id, Integer copies) throws BookNotFoudException {
 		Book book = findBookById(id);
 		book.setCopies(copies);
 		
@@ -107,7 +107,13 @@ public class BookDAOImplementation implements BookDAO{
 		
 		
 	}
-
+	@Override
+	public void updateShelf(int id, String shelf) throws BookNotFoudException {
+		Book book = findBookById(id);
+		book.setShelf(shelf);
+		
+		
+	}
 	@Override
 	public void LoanABook(int id) throws BookNotFoudException {
 		Book book = findBookById(id);
