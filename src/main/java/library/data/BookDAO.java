@@ -16,5 +16,7 @@ public interface BookDAO {
 	public Book findBookByISBN(String ISBN);
 	public void updateNumberOfCopies(int id, int copies) throws BookNotFoudException;
 	public void updateAuthor(int id, String author) throws BookNotFoudException;
+	public void LoanABook(int id) throws BookNotFoudException;
+	public void ReturnABook(int id) throws BookNotFoudException;
 
 }
