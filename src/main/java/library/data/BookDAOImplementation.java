@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
+
 import javax.persistence.Query;
 
 
@@ -104,6 +104,25 @@ public class BookDAOImplementation implements BookDAO{
 	public void updateAuthor(int id, String author) throws BookNotFoudException {
 		Book book = findBookById(id);
 		book.setAuthor(author);
+		
+		
+	}
+
+	@Override
+	public void LoanABook(int id) throws BookNotFoudException {
+		Book book = findBookById(id);
+		int copies=book.getCopies();
+		if(copies>=1) {
+			book.setCopies(copies-1);
+		}
+		
+	}
+
+	@Override
+	public void ReturnABook(int id) throws BookNotFoudException {
+		Book book = findBookById(id);
+		int copies=book.getCopies();
+		book.setCopies(copies+1);
 		
 		
 	}
