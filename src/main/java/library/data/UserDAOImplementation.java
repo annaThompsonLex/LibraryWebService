@@ -19,12 +19,10 @@ public class UserDAOImplementation implements UserDAO {
 
 	@Override
 	public void insertUser(User newUser) throws AlreadyExsistsException {
-		try {
-			findUserByEmail(newUser.getEmail());
+		
+		User user = findUserByEmail(newUser.getEmail());
+		if(user != null) {
 			throw new AlreadyExsistsException();
-		}
-		catch(UserNotFoundException e) {
-			// if email not found the new user can be inserted
 		}
 		em.persist(newUser);
 	}
@@ -38,7 +36,7 @@ public class UserDAOImplementation implements UserDAO {
 
 	@Override
 	public User findUserById(int id) throws UserNotFoundException{
-		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.getId() = :id", User.class);
+		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id = :id", User.class);
 		query.setParameter("id", id);
 		try {
 			return (User) query.getSingleResult();
@@ -56,7 +54,7 @@ public class UserDAOImplementation implements UserDAO {
 
 	@Override
 	public List<User> findUsersByFirstName(String firstName) throws UserNotFoundException{
-		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.getFirstName() = :firstName", User.class);
+		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.firstName = :firstName", User.class);
 		query.setParameter("firstName", firstName);
 		List<User>users = query.getResultList();
 		if(users.isEmpty()) {
@@ -67,24 +65,25 @@ public class UserDAOImplementation implements UserDAO {
 
 	@Override
 	public List<User> findUsersByLastName(String lastName) throws UserNotFoundException{
-		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.getLastName() = :lastName", User.class);
+		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.lastName = :lastName", User.class);
 		query.setParameter("lastName", lastName);
 		List<User>users = query.getResultList();
 		if(users.isEmpty()) {
 			throw new UserNotFoundException();
 		}
 		return users;
+		
 	}
 
 	@Override
-	public User findUserByEmail(String email) throws UserNotFoundException{
-		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.getEmail() = :email", User.class);
+	public User findUserByEmail(String email){
+		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.email = :email", User.class);
 		query.setParameter("email", email);
 		try {
 			return (User) query.getSingleResult();
 		}
 		catch(NoResultException e) {
-			throw new UserNotFoundException();
+			return null;
 		}
 		
 	}
@@ -103,6 +102,14 @@ public class UserDAOImplementation implements UserDAO {
 		user.setLastName(lastName);
 		em.merge(user);
 
+	}
+
+	@Override
+	public void updateUserPassword(int id, String password) throws UserNotFoundException {
+		User user = findUserById(id);
+		user.setPassword(password);
+		em.merge(user);
+		
 	}
 
 }
