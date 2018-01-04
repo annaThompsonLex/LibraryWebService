@@ -25,11 +25,8 @@
          data source, this example data source is just for development and testing! -->
       <!-- The datasource is deployed as WEB-INF/LibraryWebService-ds.xml, you
          can find it in the source at src/main/webapp/WEB-INF/LibraryWebService-ds.xml -->
-<<<<<<< HEAD
-      <jta-data-source>java:/MySqlLib</jta-data-source>
-=======
       <jta-data-source>java:/MySqlDSLib</jta-data-source>
->>>>>>> ee1547bad39d86cfbf1848287e8d684178957eae
+
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="create-drop" />
