@@ -9,7 +9,7 @@ public interface UserDAO {
 	public void insertUser(User newUser) throws AlreadyExsistsException;
 	public void deleteUser(int id) throws UserNotFoundException;
 	public User findUserById(int id) throws UserNotFoundException;
-	public List<User> findAllUsers();
+	public List<User> findAllUsers() throws UserNotFoundException;
 	public List<User> findUsersByFirstName(String firstName) throws UserNotFoundException;
 	public List<User> findUsersByLastName(String lastName) throws UserNotFoundException;
 	public List<User> findUserByFistAndLastName(String firstName, String lastName)throws UserNotFoundException;

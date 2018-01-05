@@ -1,14 +1,24 @@
 package library.model;
 
+
+
+import java.sql.Date;
 import java.time.LocalDate;
 
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import library.util.LocalDateAttributeConverter;
 
 @Entity
 @XmlRootElement
@@ -26,11 +36,14 @@ public class Loan {
 	@JoinColumn(name = "id")
 	private Book book;
 	
-	private LocalDate startDate;
+	private Date startDate;
 	
-	private LocalDate endDate;
+	private Date endDate;
 	
 	private boolean returned;
+	
+	@Transient
+	private LocalDateAttributeConverter dateConverter;
 	
 	public Loan() {}
 
@@ -38,8 +51,8 @@ public class Loan {
 		super();
 		this.user = user;
 		this.book = book;
-		this.startDate = LocalDate.now();
-		this.endDate = LocalDate.now().plusDays(14);
+		this.startDate = dateConverter.convertToDatabaseColumn(LocalDate.now());
+		this.endDate = dateConverter.convertToDatabaseColumn(LocalDate.now().plusDays(14));
 		this.returned = false;
 	}
 
@@ -67,19 +80,35 @@ public class Loan {
 		this.book = book;
 	}
 
-	public LocalDate getStartDate() {
+	public LocalDate getStartLocalDate() {
+		return dateConverter.convertToEntityAttribute(startDate);
+	}
+
+	public void setStartLocalDate(LocalDate startDate) {
+		this.startDate = dateConverter.convertToDatabaseColumn(startDate);
+	}
+
+	public LocalDate getEndLocalDate() {
+		return dateConverter.convertToEntityAttribute(endDate);
+	}
+
+	public void setEndLocalDate(LocalDate endDate) {
+		this.endDate = dateConverter.convertToDatabaseColumn(endDate);
+	}
+	
+	public Date getStartDate() {
 		return startDate;
 	}
-
-	public void setStartDate(LocalDate startDate) {
+	
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-
-	public LocalDate getEndDate() {
+	
+	public Date getEndDate() {
 		return endDate;
 	}
-
-	public void setEndDate(LocalDate endDate) {
+	
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 	
@@ -91,7 +120,7 @@ public class Loan {
 		this.returned = returned;
 	}
 	
-	
+
 	
 	
 	

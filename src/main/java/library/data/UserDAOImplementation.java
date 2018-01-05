@@ -47,9 +47,13 @@ public class UserDAOImplementation implements UserDAO {
 	}
 
 	@Override
-	public List<User> findAllUsers() {
+	public List<User> findAllUsers() throws UserNotFoundException{
 		TypedQuery<User> query = em.createQuery("SELECT u FROM User u", User.class);
-		return query.getResultList();
+		List<User>users = query.getResultList();
+		if(users.isEmpty()) {
+			throw new UserNotFoundException();
+		}
+		return users;
 	}
 
 	@Override

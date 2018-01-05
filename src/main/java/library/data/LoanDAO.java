@@ -8,10 +8,10 @@ import library.model.Loan;
 public interface LoanDAO {
 	
 	public void newLoan(Loan loan);
-	public List<Loan> findAllLoans();
-	public List<Loan> findAllExpiredLoans();
-	public List<Loan> findLoansByUserId(int userId);
-	public List<Loan> findLoansByBookId(int bookId);
-	public void updateStatus(boolean status);
+	public List<Loan> findAllLoans() throws LoanNotFounException;
+	public List<Loan> findAllExpiredLoans() throws LoanNotFounException;;
+	public List<Loan> findLoansByUserId(int userId) throws LoanNotFounException;;
+	public List<Loan> findLoansByBookId(int bookId) throws LoanNotFounException;;
+	public void updateStatus(boolean status) throws LoanNotFounException;;
 
 }
