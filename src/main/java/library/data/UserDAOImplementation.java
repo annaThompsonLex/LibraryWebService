@@ -74,6 +74,18 @@ public class UserDAOImplementation implements UserDAO {
 		return users;
 		
 	}
+	
+	@Override
+	public List<User> findUserByFistAndLastName(String firstName, String lastName) throws UserNotFoundException {
+		TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.firstName = :firstName AND u.lastName = :lastName", User.class);
+		query.setParameter("firstName", firstName);
+		query.setParameter("lastName", lastName);
+		List<User>users = query.getResultList();
+		if(users.isEmpty()) {
+			throw new UserNotFoundException();
+		}
+		return users;
+	}
 
 	@Override
 	public User findUserByEmail(String email){
@@ -111,5 +123,7 @@ public class UserDAOImplementation implements UserDAO {
 		em.merge(user);
 		
 	}
+
+
 
 }

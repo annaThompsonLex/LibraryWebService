@@ -12,6 +12,7 @@ public interface UserDAO {
 	public List<User> findAllUsers();
 	public List<User> findUsersByFirstName(String firstName) throws UserNotFoundException;
 	public List<User> findUsersByLastName(String lastName) throws UserNotFoundException;
+	public List<User> findUserByFistAndLastName(String firstName, String lastName)throws UserNotFoundException;
 	public User findUserByEmail(String email) throws UserNotFoundException;
 	public void updateUserEmail(int id, String newEmail) throws UserNotFoundException;
 	public void updateUserLastName(int id, String lastName)throws UserNotFoundException;

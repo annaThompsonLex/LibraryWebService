@@ -13,6 +13,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Link;
 import javax.ws.rs.core.MediaType;
@@ -35,9 +36,25 @@ public class UserResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAllUsers() {
-		return Response.ok(dao.findAllUsers()).build();
+	public Response findUsers(@QueryParam("firstName") String firstName, @QueryParam("lastName") String lastName) {
+		try {
+			if(firstName != null && lastName != null) {
+				return Response.ok(dao.findUserByFistAndLastName(firstName, lastName)).build();
+			}
+			if(firstName != null) {
+				return Response.ok(dao.findUsersByFirstName(firstName)).build();
+			}
+			if(lastName != null) {
+				return Response.ok(dao.findUsersByLastName(lastName)).build();
+			}
+			return Response.ok(dao.findAllUsers()).build();
+		}
+		catch (UserNotFoundException e) {
+			return Response.status(404).build();
+			
+		}
 	}
+	
 	@POST
 	@Produces({"application/JSON","application/XML"})
 	@Consumes({"application/JSON","application/XML"})
@@ -104,5 +121,7 @@ public class UserResource {
 		}
 
 	}
+	
+	
 
 }
