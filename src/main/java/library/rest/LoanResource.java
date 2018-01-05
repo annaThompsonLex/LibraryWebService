@@ -34,6 +34,8 @@ public class LoanResource {
 			dao.newLoan(loan);
 			URI uri = new URI(uriInfo.getAbsolutePath()+"/"+ loan.getId());
 			return Response.created(uri).build();
+		}catch(IllegalArgumentException e) {
+			return Response.status(400).build();
 		} catch (Exception e) {
 			return Response.status(409).build();
 		}

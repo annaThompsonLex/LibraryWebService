@@ -18,6 +18,9 @@ public class LoanDAOImplementation implements LoanDAO {
 
 	@Override
 	public void newLoan(Loan loan) {
+		if(loan.getUser() == null || loan.getBook() == null) {
+			throw new IllegalArgumentException();
+		}
 		em.persist(loan);
 
 	}

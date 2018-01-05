@@ -36,7 +36,7 @@ public class UserResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response findUsers(@QueryParam("firstName") String firstName, @QueryParam("lastName") String lastName) {
+	public Response findUsers(@QueryParam("firstName") String firstName, @QueryParam("lastName") String lastName,  @QueryParam("email") String email) {
 		try {
 			if(firstName != null && lastName != null) {
 				return Response.ok(dao.findUserByFistAndLastName(firstName, lastName)).build();
@@ -46,6 +46,9 @@ public class UserResource {
 			}
 			if(lastName != null) {
 				return Response.ok(dao.findUsersByLastName(lastName)).build();
+			}
+			if(email != null) {
+				return Response.ok(dao.findUserByEmail(email)).build();
 			}
 			return Response.ok(dao.findAllUsers()).build();
 		}

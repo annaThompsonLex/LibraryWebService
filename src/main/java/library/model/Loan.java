@@ -36,14 +36,14 @@ public class Loan {
 	@JoinColumn(name = "id")
 	private Book book;
 	
-	private Date startDate;
-	
-	private Date endDate;
+//	private Date startDate;
+//	
+//	private Date endDate;
 	
 	private boolean returned;
 	
-	@Transient
-	private LocalDateAttributeConverter dateConverter;
+//	@Transient
+//	private LocalDateAttributeConverter dateConverter;
 	
 	public Loan() {}
 
@@ -51,8 +51,8 @@ public class Loan {
 		super();
 		this.user = user;
 		this.book = book;
-		this.startDate = dateConverter.convertToDatabaseColumn(LocalDate.now());
-		this.endDate = dateConverter.convertToDatabaseColumn(LocalDate.now().plusDays(14));
+//		this.startDate = dateConverter.convertToDatabaseColumn(LocalDate.now());
+//		this.endDate = dateConverter.convertToDatabaseColumn(LocalDate.now().plusDays(14));
 		this.returned = false;
 	}
 
@@ -80,37 +80,37 @@ public class Loan {
 		this.book = book;
 	}
 
-	public LocalDate getStartLocalDate() {
-		return dateConverter.convertToEntityAttribute(startDate);
-	}
-
-	public void setStartLocalDate(LocalDate startDate) {
-		this.startDate = dateConverter.convertToDatabaseColumn(startDate);
-	}
-
-	public LocalDate getEndLocalDate() {
-		return dateConverter.convertToEntityAttribute(endDate);
-	}
-
-	public void setEndLocalDate(LocalDate endDate) {
-		this.endDate = dateConverter.convertToDatabaseColumn(endDate);
-	}
-	
-	public Date getStartDate() {
-		return startDate;
-	}
-	
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-	
-	public Date getEndDate() {
-		return endDate;
-	}
-	
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+//	public LocalDate getStartLocalDate() {
+//		return dateConverter.convertToEntityAttribute(startDate);
+//	}
+//
+//	public void setStartLocalDate(LocalDate startDate) {
+//		this.startDate = dateConverter.convertToDatabaseColumn(startDate);
+//	}
+//
+//	public LocalDate getEndLocalDate() {
+//		return dateConverter.convertToEntityAttribute(endDate);
+//	}
+//
+//	public void setEndLocalDate(LocalDate endDate) {
+//		this.endDate = dateConverter.convertToDatabaseColumn(endDate);
+//	}
+//	
+//	public Date getStartDate() {
+//		return startDate;
+//	}
+//	
+//	public void setStartDate(Date startDate) {
+//		this.startDate = startDate;
+//	}
+//	
+//	public Date getEndDate() {
+//		return endDate;
+//	}
+//	
+//	public void setEndDate(Date endDate) {
+//		this.endDate = endDate;
+//	}
 	
 	public void getReturnde(boolean returned) {
 		this.returned = returned;
