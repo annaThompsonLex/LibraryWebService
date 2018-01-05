@@ -7,12 +7,14 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Link;
 import javax.ws.rs.core.MediaType;
@@ -37,10 +39,34 @@ public class BookResource {
 	private  BookDAO dao ;
 	
 	@GET
-	@Produces({"application/JSON","application/XML"})
-	public Response getAllBooks() {
-		return Response.ok(dao.findAllBooks()).build();
+	@Produces("application/JSON")
+	public Response getBooks (@QueryParam("title") String title, @QueryParam("author") String author, @QueryParam("genre") String genre , @QueryParam("isbn") String isbn ){
+		
+		try {
+			if(title != null)
+				return Response.ok(dao.findBookByTitleLike(title)).build();
+			else if(author !=null)
+				return Response.ok(dao.findBookByAuthorLike(author)).build();
+			else if (genre !=null)
+				return Response.ok(dao.findBookByGenre(genre)).build();
+			else if (isbn!=null)
+				return Response.ok(dao.findBookByISBN(isbn)).build();
+			else
+				return Response.ok(dao.findAllBooks()).build();
+		} catch (Exception e) {
+			return Response.status(400).build();
+		}
+		
+	
+		//
+		
 	}
+	
+//	@GET
+//	@Produces({"application/JSON","application/XML"})
+//	public Response getAllBooks() {
+//		return Response.ok(dao.findAllBooks()).build();
+//	}
 	@POST
 	@Produces({"application/JSON","application/XML"})
 	@Consumes({"application/JSON","application/XML"})
@@ -101,6 +127,32 @@ public class BookResource {
 		} catch (BookNotFoudException e1) {
 			return Response.status(404).build();
 		}
+	}
+	@GET
+	@Path("/takeloan/{id}")
+	public Response LoanABook(@PathParam("id") int id) {
+		try {
+			dao.LoanABook(id);
+			return Response.status(202).build();
+					
+		} catch (BookNotFoudException e) {
+			
+			return Response.status(404).build();
+		}
+		
+	}
+	@GET
+	@Path("/returnloan/{id}")
+	public Response ReturnABook(@PathParam("id") int id) {
+		try {
+			dao.ReturnABook(id);
+			return Response.status(202).build();
+					
+		} catch (BookNotFoudException e) {
+			
+			return Response.status(404).build();
+		}
+		
 	}
 
 }

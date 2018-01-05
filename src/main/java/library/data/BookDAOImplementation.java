@@ -58,24 +58,24 @@ public class BookDAOImplementation implements BookDAO{
 
 	@Override
 	public List<Book> findBookByTitleLike(String title) {
-		Query q = em.createQuery("select book from Book book where lower book.author like :title");
-		q.setParameter("title","%"+ title.toLowerCase()+"%");
+		Query q = em.createQuery("select book from Book book where book.title like :title");
+		q.setParameter("title","%"+title+"%");
 		List<Book> book = q.getResultList();
 		return book;
 	}
 
 	@Override
 	public List<Book> findBookByAuthorLike(String author) {
-		Query q = em.createQuery("select book from Book book where lower book.author like :author");
-		q.setParameter("author", "%"+author.toLowerCase()+"%");
+		Query q = em.createQuery("select book from Book book where book.author like :author");
+		q.setParameter("author", "%"+author+"%");
 		List<Book> book = q.getResultList();
 		return book;
 	}
 
 	@Override
 	public List<Book> findBookByGenre(String genre) {
-		Query q = em.createQuery("select book from Book book where lower book.genre = :genre");
-		q.setParameter("genre", genre.toLowerCase());
+		Query q = em.createQuery("select book from Book book where book.genre = :genre");
+		q.setParameter("genre", genre);
 		return q.getResultList();
 	}
 
@@ -121,6 +121,8 @@ public class BookDAOImplementation implements BookDAO{
 		if(copies>=1) {
 			book.setCopies(copies-1);
 		}
+		else
+			throw new BookNotFoudException();
 		
 	}
 

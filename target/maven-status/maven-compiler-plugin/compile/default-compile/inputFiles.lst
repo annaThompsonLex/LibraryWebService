@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\model\Loan.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\BookDAOImplementation.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\MemberRepository.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\BookNotFoudException.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\UserDAO.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\model\Book.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\rest\JaxRsActivator.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\rest\MemberResourceRESTService.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\AlreadyExsistsException.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\UserDAOImplementation.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\rest\BookResource.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\controller\MemberController.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\service\MemberRegistration.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\MemberListProducer.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\rest\UserResource.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\util\Resources.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\model\Member.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\UserNotFoundException.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\BookDAO.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\AlreadyExistException.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\data\LoanDAO.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\model\User.java
-C:\Users\User\Desktop\Project\LibraryWebService\src\main\java\library\controller\ValidateISBN.java
-=======
 C:\Users\User\Documents\Java EE Starting Workspace\LibraryWebService\src\main\java\library\data\MemberRepository.java
 C:\Users\User\Documents\Java EE Starting Workspace\LibraryWebService\src\main\java\library\data\LoanDAO.java
 C:\Users\User\Documents\Java EE Starting Workspace\LibraryWebService\src\main\java\library\data\AlreadyExsistsException.java
@@ -46,4 +21,3 @@ C:\Users\User\Documents\Java EE Starting Workspace\LibraryWebService\src\main\ja
 C:\Users\User\Documents\Java EE Starting Workspace\LibraryWebService\src\main\java\library\data\MemberListProducer.java
 C:\Users\User\Documents\Java EE Starting Workspace\LibraryWebService\src\main\java\library\rest\BookResource.java
 C:\Users\User\Documents\Java EE Starting Workspace\LibraryWebService\src\main\java\library\util\Resources.java
->>>>>>> d38ff744ec4714004437e0e2b26913fc836f9673
