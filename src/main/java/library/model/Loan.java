@@ -31,14 +31,20 @@ public class Loan {
 	@OneToOne
 	private User user;
 	
+<<<<<<< HEAD
 	private String startDate;
 	
 	private String endDate;
+=======
+//	private Date startDate;
+//	
+//	private Date endDate;
+>>>>>>> f107302d3ab465886b8696b7d4b7467017238638
 	
 	private boolean returned;
 	
-	@Transient
-	private LocalDateAttributeConverter dateConverter;
+//	@Transient
+//	private LocalDateAttributeConverter dateConverter;
 	
 	public Loan() {}
 
@@ -46,9 +52,15 @@ public class Loan {
 		super();
 	
 		this.user = user;
+<<<<<<< HEAD
 		this.book= book;
 		this.startDate = LocalDate.now().toString();
 		this.endDate = LocalDate.now().plusDays(14).toString();
+=======
+		this.book = book;
+//		this.startDate = dateConverter.convertToDatabaseColumn(LocalDate.now());
+//		this.endDate = dateConverter.convertToDatabaseColumn(LocalDate.now().plusDays(14));
+>>>>>>> f107302d3ab465886b8696b7d4b7467017238638
 		this.returned = false;
 	}
 
@@ -84,6 +96,7 @@ public class Loan {
 		this.returned = returned;
 	}
 
+<<<<<<< HEAD
 	public LocalDateAttributeConverter getDateConverter() {
 		return dateConverter;
 	}
@@ -110,6 +123,40 @@ public class Loan {
 		this.endDate = endDate;
 	}
 
+=======
+//	public LocalDate getStartLocalDate() {
+//		return dateConverter.convertToEntityAttribute(startDate);
+//	}
+//
+//	public void setStartLocalDate(LocalDate startDate) {
+//		this.startDate = dateConverter.convertToDatabaseColumn(startDate);
+//	}
+//
+//	public LocalDate getEndLocalDate() {
+//		return dateConverter.convertToEntityAttribute(endDate);
+//	}
+//
+//	public void setEndLocalDate(LocalDate endDate) {
+//		this.endDate = dateConverter.convertToDatabaseColumn(endDate);
+//	}
+//	
+//	public Date getStartDate() {
+//		return startDate;
+//	}
+//	
+//	public void setStartDate(Date startDate) {
+//		this.startDate = startDate;
+//	}
+//	
+//	public Date getEndDate() {
+//		return endDate;
+//	}
+//	
+//	public void setEndDate(Date endDate) {
+//		this.endDate = endDate;
+//	}
+	
+>>>>>>> f107302d3ab465886b8696b7d4b7467017238638
 	public void getReturnde(boolean returned) {
 		this.returned = returned;
 	}

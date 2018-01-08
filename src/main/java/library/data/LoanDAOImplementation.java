@@ -18,8 +18,15 @@ public class LoanDAOImplementation implements LoanDAO {
 	EntityManager em;
 
 	@Override
+<<<<<<< HEAD
 	public void newLoan(Book book, User user) {
 		Loan loan = new Loan(book, user);
+=======
+	public void newLoan(Loan loan) {
+		if(loan.getUser() == null || loan.getBook() == null) {
+			throw new IllegalArgumentException();
+		}
+>>>>>>> f107302d3ab465886b8696b7d4b7467017238638
 		em.persist(loan);
 
 	}
