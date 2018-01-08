@@ -32,7 +32,7 @@ public class LoanResource {
 	@Inject
 	private UserDAO userDao ;
 	
-<<<<<<< HEAD
+
 	@Inject
 	private  BookDAO bookDao ;
 	
@@ -50,23 +50,10 @@ public class LoanResource {
 		} catch (BookNotFoudException | UserNotFoundException e) {
 			
 			return Response.status(404).build();
-=======
-	@POST
-	@Produces({"application/JSON","application/XML"})
-	@Consumes({"application/JSON","application/XML"})
-	public Response createLoan(Loan loan) {
-		try {		
-			dao.newLoan(loan);
-			URI uri = new URI(uriInfo.getAbsolutePath()+"/"+ loan.getId());
-			return Response.created(uri).build();
-		}catch(IllegalArgumentException e) {
-			return Response.status(400).build();
-		} catch (Exception e) {
-			return Response.status(409).build();
->>>>>>> f107302d3ab465886b8696b7d4b7467017238638
+
 		}
-		
 	}
+			
 	@GET
 	@Path("/returnloan/{bookId}/{userId}")
 	public Response ReturnABook(@PathParam("bookId") int bookId,@PathParam("userId") int userId) {
