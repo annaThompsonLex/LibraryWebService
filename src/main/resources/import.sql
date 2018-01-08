@@ -19,3 +19,9 @@
 -- insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212') 
 
 CREATE SCHEMA mysqllib;
+insert into Book (isbn, title, author, genre, shelf, copies) values ('1250158060', 'Fire and Fury: Inside the Trump White House', 'Michael Wolff', 'Politic', 'FMP-10', '10')
+insert into Book (isbn, title, author, genre, shelf, copies) values ('0801075254', 'Your Best Year Ever: A 5-Step Plan for Achieving Your Most Important Goals', 'Michael Hyatt', 'Business & Money', 'YMB-10', '2')
+insert into Book (isbn, title, author, genre, shelf, copies) values ('0525562516', 'Collusion: Secret Meetings, Dirty Money, and How Russia Helped Donald Trump Win ', 'Luke Harding', 'Politic', 'CLP-10', '10')
+
+insert into User (firstName, lastName, email, password) values ('Erik', 'Thompson', 'erik@gmail.com', '290303') 
+insert into User (firstName, lastName, email, password) values ('Tommy', 'Steger', 'tommysteger@gmail.com', '660306') 
