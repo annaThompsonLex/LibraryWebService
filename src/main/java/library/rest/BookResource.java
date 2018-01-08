@@ -128,31 +128,32 @@ public class BookResource {
 			return Response.status(404).build();
 		}
 	}
-	@GET
-	@Path("/takeloan/{id}")
-	public Response LoanABook(@PathParam("id") int id) {
-		try {
-			dao.LoanABook(id);
-			return Response.status(202).build();
-					
-		} catch (BookNotFoudException e) {
-			
-			return Response.status(404).build();
-		}
-		
-	}
-	@GET
-	@Path("/returnloan/{id}")
-	public Response ReturnABook(@PathParam("id") int id) {
-		try {
-			dao.ReturnABook(id);
-			return Response.status(202).build();
-					
-		} catch (BookNotFoudException e) {
-			
-			return Response.status(404).build();
-		}
-		
-	}
+//	@GET
+//	@Path("/takeloan/{id}")
+//	public Response LoanABook(@PathParam("id") int id) {
+//		try {
+//			dao.LoanABook(id);
+//			
+//			return Response.status(202).build();
+//					
+//		} catch (BookNotFoudException e) {
+//			
+//			return Response.status(404).build();
+//		}
+//		
+//	}
+//	@GET
+//	@Path("/returnloan/{id}")
+//	public Response ReturnABook(@PathParam("id") int id) {
+//		try {
+//			dao.ReturnABook(id);
+//			return Response.status(202).build();
+//					
+//		} catch (BookNotFoudException e) {
+//			
+//			return Response.status(404).build();
+//		}
+//		
+//	}
 
 }

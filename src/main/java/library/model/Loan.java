@@ -5,16 +5,12 @@ package library.model;
 import java.sql.Date;
 import java.time.LocalDate;
 
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -29,16 +25,15 @@ public class Loan {
 	private int id;
 	
 	@OneToOne
-	@JoinColumn(name = "id")
-	private User user;
-	
-	@OneToOne
-	@JoinColumn(name = "id")
 	private Book book;
 	
-	private Date startDate;
 	
-	private Date endDate;
+	@OneToOne
+	private User user;
+	
+	private String startDate;
+	
+	private String endDate;
 	
 	private boolean returned;
 	
@@ -47,12 +42,13 @@ public class Loan {
 	
 	public Loan() {}
 
-	public Loan(User user, Book book) {
+	public Loan(Book book, User user) {
 		super();
+	
 		this.user = user;
-		this.book = book;
-		this.startDate = dateConverter.convertToDatabaseColumn(LocalDate.now());
-		this.endDate = dateConverter.convertToDatabaseColumn(LocalDate.now().plusDays(14));
+		this.book= book;
+		this.startDate = LocalDate.now().toString();
+		this.endDate = LocalDate.now().plusDays(14).toString();
 		this.returned = false;
 	}
 
@@ -64,14 +60,6 @@ public class Loan {
 		this.id = id;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	public Book getBook() {
 		return book;
 	}
@@ -80,38 +68,48 @@ public class Loan {
 		this.book = book;
 	}
 
-	public LocalDate getStartLocalDate() {
-		return dateConverter.convertToEntityAttribute(startDate);
+	public User getUser() {
+		return user;
 	}
 
-	public void setStartLocalDate(LocalDate startDate) {
-		this.startDate = dateConverter.convertToDatabaseColumn(startDate);
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public LocalDate getEndLocalDate() {
-		return dateConverter.convertToEntityAttribute(endDate);
+	public boolean isReturned() {
+		return returned;
 	}
 
-	public void setEndLocalDate(LocalDate endDate) {
-		this.endDate = dateConverter.convertToDatabaseColumn(endDate);
+	public void setReturned(boolean returned) {
+		this.returned = returned;
 	}
+
+	public LocalDateAttributeConverter getDateConverter() {
+		return dateConverter;
+	}
+
+	public void setDateConverter(LocalDateAttributeConverter dateConverter) {
+		this.dateConverter = dateConverter;
+	}
+
+
 	
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
-	
-	public void setStartDate(Date startDate) {
+
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
-	
-	public Date getEndDate() {
+
+	public String getEndDate() {
 		return endDate;
 	}
-	
-	public void setEndDate(Date endDate) {
+
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	
+
 	public void getReturnde(boolean returned) {
 		this.returned = returned;
 	}

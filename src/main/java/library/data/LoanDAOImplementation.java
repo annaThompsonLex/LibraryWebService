@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import library.model.Book;
 import library.model.Loan;
 import library.model.User;
 
@@ -17,7 +18,8 @@ public class LoanDAOImplementation implements LoanDAO {
 	EntityManager em;
 
 	@Override
-	public void newLoan(Loan loan) {
+	public void newLoan(Book book, User user) {
+		Loan loan = new Loan(book, user);
 		em.persist(loan);
 
 	}
@@ -55,5 +57,13 @@ public class LoanDAOImplementation implements LoanDAO {
 		// TODO Auto-generated method stub
 
 	}
+
+	@Override
+	public void returnLoan(int bookId, int userId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }
