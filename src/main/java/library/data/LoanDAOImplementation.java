@@ -1,5 +1,7 @@
 package library.data;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -37,32 +39,57 @@ public class LoanDAOImplementation implements LoanDAO {
 
 	@Override
 	public List<Loan> findAllExpiredLoans() throws LoanNotFounException {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l WHERE l.returned = :boolean", Loan.class);
+		query.setParameter("boolean", false);
+		List<Loan>loans = query.getResultList();
+		List<Loan>expiredLoans = new ArrayList<>();
+		LocalDate today = LocalDate.now();
+		for(Loan loan:loans) {
+			LocalDate endDate = LocalDate.parse(loan.getEndDate());
+			if(endDate.isBefore(today)) {
+				expiredLoans.add(loan);
+			}
+		}
+		if(expiredLoans.isEmpty()) {
+			throw new LoanNotFounException();
+		}
+		return expiredLoans;
+		
+		
 	}
 
 	@Override
-	public List<Loan> findLoansByUserId(int userId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Loan> findLoansByUserId(int userId) throws LoanNotFounException {
+		TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l JOIN l.user u WHERE u.id = :userId", Loan.class);
+		query.setParameter("userId", userId);
+		List<Loan>loans = query.getResultList();
+		if(loans.isEmpty()) {
+			throw new LoanNotFounException();
+		}
+		return loans;
 	}
 
 	@Override
-	public List<Loan> findLoansByBookId(int bookId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Loan> findLoansByBookId(int bookId) throws LoanNotFounException {
+		TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l JOIN l.book b WHERE b.id = :bookId", Loan.class);
+		query.setParameter("bookId", bookId);
+		List<Loan>loans = query.getResultList();
+		if(loans.isEmpty()) {
+			throw new LoanNotFounException();
+		}
+		return loans;
 	}
 
-	@Override
-	public void updateStatus(boolean status) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public void returnLoan(int bookId, int userId) {
-		// TODO Auto-generated method stub
-		
+		TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l JOIN l.book b JOIN l.user u WHERE b.id = :bookId AND u.id = :userId", Loan.class);
+		query.setParameter("bookId", bookId);
+		query.setParameter("userId", userId);
+		List<Loan>loans = query.getResultList();
+		for(Loan loan: loans) {
+			loan.setReturned(true);
+		}
 	}
 
 	
