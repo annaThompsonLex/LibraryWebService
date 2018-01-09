@@ -25,3 +25,9 @@ insert into Book (isbn, title, author, genre, shelf, copies) values ('0525562516
 
 insert into User (firstName, lastName, email, password) values ('Erik', 'Thompson', 'erik@gmail.com', '290303') 
 insert into User (firstName, lastName, email, password) values ('Tommy', 'Steger', 'tommysteger@gmail.com', '660306') 
+
+insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 2, "2017-12-05", "2017-12-19", false)
+insert into Loan(book_id, user_id, startDate, endDate, returned) values(2, 2, "2017-11-05", "2017-11-19", true)
+insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 2, "2018-01-05", "2018-01-19", false)
+insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 1, "2018-01-01", "2018-01-15", false)
+insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 1, "2017-01-01", "2017-01-15", false)
