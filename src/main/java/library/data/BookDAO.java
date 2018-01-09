@@ -19,5 +19,6 @@ public interface BookDAO {
 	public void updateShelf(int id, String shelf) throws BookNotFoudException;
 	public void LoanABook(int id) throws BookNotFoudException;
 	public void ReturnABook(int id) throws BookNotFoudException;
+	
 
 }

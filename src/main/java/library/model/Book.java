@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -19,26 +20,29 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String ISBN;
-	
+
 	private String title;
-	
+
 	private String author;
-	
+
 	private String genre;
-	
+
 	private String shelf;
-	
+
 	private Integer copies;
+
+//	@Lob
+//	private byte[] coverPic;
 	
-	
-	
-	
-	
+	private String picUrl;
+
+
+
 	public Book() {}
 
-	public Book(String iSBN, String title, String author, String genre, String shelf, Integer copies) {
+	public Book(String iSBN, String title, String author, String genre, String shelf, Integer copies, String picUrl ) {
 		super();
 		ISBN = iSBN;
 		this.title = title;
@@ -46,6 +50,17 @@ public class Book {
 		this.genre = genre;
 		this.shelf = shelf;
 		this.copies = copies;
+		this.picUrl = picUrl;
+	}
+
+	
+
+	public String getPicUrl() {
+		return picUrl;
+	}
+
+	public void setPicUrl(String picUrl) {
+		this.picUrl = picUrl;
 	}
 
 	public int getId() {
@@ -103,6 +118,6 @@ public class Book {
 	public void setCopies(Integer copies) {
 		this.copies = copies;
 	}
-	
-	
+
+
 }

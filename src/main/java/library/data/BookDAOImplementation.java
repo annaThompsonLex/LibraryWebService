@@ -1,5 +1,9 @@
 package library.data;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -23,6 +27,7 @@ public class BookDAOImplementation implements BookDAO{
 		ValidateISBN validate = new ValidateISBN();
 		if((validate.checkISBN(newBook.getISBN())==true) && (findBookByISBN(newBook.getISBN()) == null)) {
 			em.persist(newBook);
+			//loadCoverPic(newBook.getISBN());
 		}
 		else {
 			throw new AlreadyExistException();
@@ -134,5 +139,22 @@ public class BookDAOImplementation implements BookDAO{
 		
 		
 	}
+//	public void loadCoverPic(String fileName) {
+//		File file = new File("C:\\"+fileName+".jpg");
+//		byte[] picInBytes = new byte[(int) file.length()];
+//		FileInputStream fileInputStream;
+//		try {
+//			fileInputStream = new FileInputStream(file);
+//			fileInputStream.read(picInBytes);
+//			fileInputStream.close();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		Book book = findBookByISBN(fileName);
+//		book.setCoverPic(picInBytes);
+//		
+//	}
+	
 
 }
