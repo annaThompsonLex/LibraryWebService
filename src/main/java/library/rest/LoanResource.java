@@ -9,6 +9,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
@@ -38,6 +40,7 @@ public class LoanResource {
 	
 	@GET
 	@Path("/takeloan/{bookId}/{userId}")
+	@Produces({"application/JSON","application/XML"})
 	public Response LoanABook(@PathParam("bookId") int bookId,@PathParam("userId") int userId) {
 		try {
 			bookDao.LoanABook(bookId);
@@ -53,6 +56,7 @@ public class LoanResource {
 			
 	@GET
 	@Path("/returnloan/{bookId}/{userId}")
+	@Produces({"application/JSON","application/XML"})
 	public Response ReturnABook(@PathParam("bookId") int bookId,@PathParam("userId") int userId) {
 		try {
 			bookDao.ReturnABook(bookId);
@@ -65,6 +69,23 @@ public class LoanResource {
 		}
 		
 	}
-	
+	@GET
+	@Produces({"application/JSON","application/XML"})
+	public Response getBooks (@QueryParam("bookid") int bookid, @QueryParam("userid") int userid, @QueryParam("expired") String expired ){
+		
+		try {
+			if(bookid != 0)
+				return Response.ok(loanDao.findLoansByBookId(bookid)).build();
+			else if(userid !=0)
+				return Response.ok(loanDao.findLoansByUserId(userid)).build();
+			else if (expired !=null)
+				return Response.ok(loanDao.findAllExpiredLoans()).build();
+			else
+				return Response.ok(loanDao.findAllLoans()).build();
+		} catch (Exception e) {
+			return Response.status(400).build();
+		}
+		
+	}
 
 }
