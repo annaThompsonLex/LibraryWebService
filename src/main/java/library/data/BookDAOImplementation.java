@@ -1,5 +1,7 @@
 package library.data;
-
+/**
+ * @author Tommy Steger
+ */
 
 import java.util.List;
 import javax.ejb.Stateless;

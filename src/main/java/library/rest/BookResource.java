@@ -1,5 +1,7 @@
 package library.rest;
-
+/**
+ * @author Tommy Steger
+ */
 import java.net.URI;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -15,6 +17,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Link;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.core.UriInfo;
 
 import library.data.BookDAO;
@@ -25,6 +28,8 @@ import library.model.Book;
 @Stateless
 @Path("/book")
 public class BookResource {
+	
+	
 	
 	@Context
 	private UriInfo uriInfo;
@@ -48,19 +53,12 @@ public class BookResource {
 			else
 				return Response.ok(dao.findAllBooks()).build();
 		} catch (Exception e) {
-			return Response.status(400).build();
+			return Response.status(404).build();
 		}
-		
-	
-		//
+
 		
 	}
-	
-//	@GET
-//	@Produces({"application/JSON","application/XML"})
-//	public Response getAllBooks() {
-//		return Response.ok(dao.findAllBooks()).build();
-//	}
+
 	@POST
 	@Produces({"application/JSON","application/XML"})
 	@Consumes({"application/JSON","application/XML"})
@@ -95,7 +93,7 @@ public class BookResource {
 	public Response deleteBook(@PathParam("id") int id) {
 		try {
 			dao.deleteBook(id);
-			return Response.status(204).build();
+			return Response.status(202).build();
 					
 		} catch (BookNotFoudException e) {
 			
