@@ -19,15 +19,15 @@
 -- insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212') 
 
 CREATE SCHEMA mysqllib;
---insert into Book (isbn, title, author, genre, shelf, copies,) values ('1250158060', 'Fire and Fury: Inside the Trump White House', 'Michael Wolff', 'Politic', 'FMP-10', '10')
-insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('0801075254', 'Your Best Year Ever: A 5-Step Plan for Achieving Your Most Important Goals', 'Michael Hyatt', 'Business & Money', 'YMB-10', '2', 'http://pic.html')
-insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('0525562516', 'Collusion: Secret Meetings, Dirty Money, and How Russia Helped Donald Trump Win ', 'Luke Harding', 'Politic', 'CLP-10', '10', 'http://pic.html')
+insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('9781408711392', 'Fire and Fury: Inside the Trump White House', 'Michael Wolff', 'Politic', 'FMP-10', '10', 'https://s2.adlibris.com/images/38919617/fire-and-fury.jpg')
+insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('9789144052601', 'Skarp programmering med C#', 'Jan Skansholm', 'Datorer & IT', 'YMB-10', '2', 'https://s1.adlibris.com/images/446588/skarp-programmering-med-c.jpg')
+insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('9789144085876', 'Java : steg för steg', 'Luke Harding', 'Datorer & IT', 'CLP-10', '10', 'https://s1.adlibris.com/images/1157627/java-steg-for-steg.jpg')
 
 insert into User (firstName, lastName, email, password) values ('Erik', 'Thompson', 'erik@gmail.com', '290303') 
 insert into User (firstName, lastName, email, password) values ('Tommy', 'Steger', 'tommysteger@gmail.com', '660306') 
 
-insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 2, "2017-12-05", "2017-12-19", false)
-insert into Loan(book_id, user_id, startDate, endDate, returned) values(2, 2, "2017-11-05", "2017-11-19", true)
-insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 2, "2018-01-05", "2018-01-19", false)
-insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 1, "2018-01-01", "2018-01-15", false)
-insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 1, "2017-01-01", "2017-01-15", false)
+--insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 2, "2017-12-05", "2017-12-19", false)
+--insert into Loan(book_id, user_id, startDate, endDate, returned) values(2, 2, "2017-11-05", "2017-11-19", true)
+--insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 2, "2018-01-05", "2018-01-19", false)
+--insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 1, "2018-01-01", "2018-01-15", false)
+--insert into Loan(book_id, user_id, startDate, endDate, returned) values(1, 1, "2017-01-01", "2017-01-15", false)
