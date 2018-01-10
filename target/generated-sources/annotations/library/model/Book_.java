@@ -8,12 +8,12 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Book.class)
 public abstract class Book_ {
 
+	public static volatile SingularAttribute<Book, String> picUrl;
 	public static volatile SingularAttribute<Book, Integer> copies;
 	public static volatile SingularAttribute<Book, String> ISBN;
 	public static volatile SingularAttribute<Book, String> author;
 	public static volatile SingularAttribute<Book, String> genre;
 	public static volatile SingularAttribute<Book, Integer> id;
-	public static volatile SingularAttribute<Book, byte[]> coverPic;
 	public static volatile SingularAttribute<Book, String> title;
 	public static volatile SingularAttribute<Book, String> shelf;
 
