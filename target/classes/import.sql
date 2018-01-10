@@ -21,7 +21,8 @@
 CREATE SCHEMA mysqllib;
 insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('9781408711392', 'Fire and Fury: Inside the Trump White House', 'Michael Wolff', 'Politic', 'FMP-10', '10', 'https://s2.adlibris.com/images/38919617/fire-and-fury.jpg')
 insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('9789144052601', 'Skarp programmering med C#', 'Jan Skansholm', 'Datorer & IT', 'YMB-10', '2', 'https://s1.adlibris.com/images/446588/skarp-programmering-med-c.jpg')
-insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('9789144085876', 'Java : steg för steg', 'Luke Harding', 'Datorer & IT', 'CLP-10', '10', 'https://s1.adlibris.com/images/1157627/java-steg-for-steg.jpg')
+insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('9789144085876', 'Java : step by step', 'Luke Harding', 'Datorer & IT', 'CLP-10', '10', 'https://s1.adlibris.com/images/1157627/java-steg-for-steg.jpg')
+insert into Book (isbn, title, author, genre, shelf, copies, picUrl) values ('9781471166945', 'What Happened','Hillary Rodham Clinton', 'Politic', 'WHP-10', '4', 'https://s1.adlibris.com/images/30796467/what-happened.jpg')
 
 insert into User (firstName, lastName, email, password) values ('Erik', 'Thompson', 'erik@gmail.com', '290303') 
 insert into User (firstName, lastName, email, password) values ('Tommy', 'Steger', 'tommysteger@gmail.com', '660306') 
