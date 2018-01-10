@@ -1,20 +1,15 @@
 package library.rest;
 
-import java.net.URI;
+
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
-
 import library.data.BookDAO;
 import library.data.BookNotFoudException;
 import library.data.LoanDAO;
@@ -26,8 +21,7 @@ import library.data.UserNotFoundException;
 @Path("/loan")
 public class LoanResource {
 	
-	@Context
-	private UriInfo uriInfo;
+
 	
 	@Inject
 	private UserDAO userDao ;

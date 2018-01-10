@@ -1,19 +1,12 @@
 package library.data;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
-
 import javax.persistence.Query;
-
-
 import library.controller.ValidateISBN;
 import library.model.Book;
 @Stateless

@@ -1,16 +1,11 @@
 package library.model;
 
-import java.lang.annotation.Target;
-import java.util.List;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -32,9 +27,6 @@ public class Book {
 	private String shelf;
 
 	private Integer copies;
-
-//	@Lob
-//	private byte[] coverPic;
 	
 	private String picUrl;
 
