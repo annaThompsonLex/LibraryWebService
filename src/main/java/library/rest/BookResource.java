@@ -3,6 +3,8 @@ package library.rest;
  * @author Tommy Steger
  */
 import java.net.URI;
+
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
