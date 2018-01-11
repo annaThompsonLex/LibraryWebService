@@ -15,6 +15,7 @@ import javax.ws.rs.core.Response;
 import library.data.BookDAO;
 import library.data.BookNotFoudException;
 import library.data.LoanDAO;
+import library.data.LoanNotFounException;
 import library.data.UserDAO;
 import library.data.UserNotFoundException;
 
@@ -58,7 +59,7 @@ public class LoanResource {
 			loanDao.returnLoan(bookId,userId);
 			return Response.status(202).build();
 					
-		} catch (BookNotFoudException e) {
+		} catch (BookNotFoudException| LoanNotFounException e) {
 			
 			return Response.status(404).build();
 		}
