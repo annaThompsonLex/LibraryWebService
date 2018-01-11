@@ -1,6 +1,9 @@
 package library.model;
 
-
+/**
+ * @author Tommy Steger
+ * @author Anna Thompson
+ */
 
 
 import java.time.LocalDate;

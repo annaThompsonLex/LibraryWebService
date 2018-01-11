@@ -1,5 +1,10 @@
 package library.data;
 
+/**
+ * @author Tommy Steger
+ * @author Anna Thompson
+ */
+
 import java.util.List;
 
 import library.model.User;

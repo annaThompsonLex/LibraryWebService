@@ -1,6 +1,7 @@
 package library.model;
 /**
  * @author Tommy Steger
+ * @author Anna Thompson
  */
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

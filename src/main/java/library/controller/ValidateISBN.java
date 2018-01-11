@@ -1,5 +1,10 @@
 package library.controller;
 
+/**
+ * @author Tommy Steger
+ * @author Anna Thompson
+ */
+
 public class ValidateISBN {
 
 

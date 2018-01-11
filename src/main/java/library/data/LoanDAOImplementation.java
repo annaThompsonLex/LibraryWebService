@@ -1,5 +1,10 @@
 package library.data;
 
+/**
+ * @author Tommy Steger
+ * @author Anna Thompson
+ */
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

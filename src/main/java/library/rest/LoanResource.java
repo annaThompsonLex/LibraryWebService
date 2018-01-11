@@ -1,5 +1,9 @@
 package library.rest;
 
+/**
+ * @author Tommy Steger
+ * @author Anna Thompson
+ */
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;

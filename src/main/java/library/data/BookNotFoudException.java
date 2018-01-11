@@ -1,5 +1,10 @@
 package library.data;
 
+/**
+ * @author Tommy Steger
+ * @author Anna Thompson
+ */
+
 public class BookNotFoudException extends Exception {
 
 	/**

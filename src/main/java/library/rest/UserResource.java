@@ -1,5 +1,10 @@
 package library.rest;
 
+/**
+ * @author Tommy Steger
+ * @author Anna Thompson
+ */
+
 import java.net.URI;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
