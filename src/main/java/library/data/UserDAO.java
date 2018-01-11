@@ -17,7 +17,4 @@ public interface UserDAO {
 	public void updateUserEmail(int id, String newEmail) throws UserNotFoundException;
 	public void updateUserLastName(int id, String lastName)throws UserNotFoundException;
 	public void updateUserPassword(int id, String password)throws UserNotFoundException;
-	
-	
-
 }

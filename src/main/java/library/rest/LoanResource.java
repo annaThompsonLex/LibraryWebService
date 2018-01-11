@@ -1,8 +1,6 @@
 package library.rest;
 
 
-
-import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -16,8 +14,6 @@ import library.data.LoanDAO;
 import library.data.UserDAO;
 import library.data.UserNotFoundException;
 
-
-@Stateless
 @Path("/loan")
 public class LoanResource {
 	

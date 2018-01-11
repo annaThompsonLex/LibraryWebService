@@ -22,7 +22,6 @@ import library.data.UserDAO;
 import library.data.UserNotFoundException;
 import library.model.User;
 
-@Stateless
 @Path("/user")
 public class UserResource {
 	
