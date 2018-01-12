@@ -16,6 +16,8 @@ Add User and Password
 \wildfly-10.1.0.Final\bin>
 add-user.bat -a -u "guest1" -p "guest1" -g "guest"
 
+        \wildfly-10.1.0.Final\bin>
+        add-user.bat -a -u "guest1" -p "guest1" -g "guest"
 
 What is it?
 -----------
