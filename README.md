@@ -13,11 +13,13 @@ Add User and Password
 1. You need to have a user account to get access to http methods, you find it in the web.xml file in the project.
 2. How to set up a new user see example:
 
-\wildfly-10.1.0.Final\bin>
-add-user.bat -a -u "guest1" -p "guest1" -g "guest"
-
+        For Windows:
         \wildfly-10.1.0.Final\bin>
         add-user.bat -a -u "guest1" -p "guest1" -g "guest"
+
+        For Linux:
+        \wildfly-10.1.0.Final\bin>
+        add-user.sh -a -u "guest1" -p "guest1" -g "guest"
 
 What is it?
 -----------
