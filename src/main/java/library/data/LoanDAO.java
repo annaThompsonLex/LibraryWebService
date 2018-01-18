@@ -18,7 +18,7 @@ public interface LoanDAO {
 	public List<Loan> findAllExpiredLoans() throws LoanNotFounException;;
 	public List<Loan> findLoansByUserId(int userId) throws LoanNotFounException;
 	public List<Loan> findLoansByBookId(int bookId) throws LoanNotFounException;
-	public void returnLoan(int bookId, int userId);
+	public void returnLoan(int bookId, int userId) throws LoanNotFounException;
 	
 
 }

@@ -87,11 +87,14 @@ public class LoanDAOImplementation implements LoanDAO {
 
 
 	@Override
-	public void returnLoan(int bookId, int userId) {
+	public void returnLoan(int bookId, int userId) throws LoanNotFounException{
 		TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l JOIN l.book b JOIN l.user u WHERE b.id = :bookId AND u.id = :userId", Loan.class);
 		query.setParameter("bookId", bookId);
 		query.setParameter("userId", userId);
 		List<Loan>loans = query.getResultList();
+		if(loans.isEmpty()) {
+			throw new LoanNotFounException();
+		}
 		for(Loan loan: loans) {
 			loan.setReturned(true);
 		}
