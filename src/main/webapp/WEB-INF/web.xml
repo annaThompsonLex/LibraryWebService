@@ -4,7 +4,8 @@
     
  
 
-    <!-- Use HTTP Basic for authentication -->
+    <!-- Use HTTP Basic for authentication 
+    
     <login-config>
         <auth-method>BASIC</auth-method>
         <realm-name>RealmUsersRoles</realm-name>
@@ -32,4 +33,5 @@
      <security-role>
       <role-name>admin</role-name>  
     </security-role>
+    -->
 </web-app>

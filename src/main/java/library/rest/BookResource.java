@@ -4,6 +4,8 @@ package library.rest;
  * @author Anna Thompson
  */
 import java.net.URI;
+import java.util.Iterator;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
