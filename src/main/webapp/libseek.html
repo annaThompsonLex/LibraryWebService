@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/css2.css"/>
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href = "user.html">User Managment page</a></li>	
+                    <li><a href = "book.html">Book Managment page</a></li>
+                    <li><a href = "libseek.html">Library page</a></li>
+                </ul>
+            </nav>
+            <div><img src="img/logo2.png" alt="Logo" class="logo-image"> </div>
+        </header>
+        <div>
+            <h2 class="rubrik">Seek for books</h2>
+            <section id="main">
+                
+                <form action="http://wilder.azurewebsites.net/echo" method="GET" class="seek-form" id="librarySeekForm" >
+                    <label for ="select" class="select">Select:</label><br />
+                    <input type="radio" id="title" name="seekbutton" value="title" />Title</>
+                    <input type="radio" id="author" name="seekbutton" value="author" />Author</>
+                    <input type="radio" id="genre" name="seekbutton" value="genre" />Genre</>
+                    <input type="radio" id="all" name="seekbutton" value="all" />All</>
+                    <input type="radio" id="isbn" name="seekbutton" value="isbn" />Isbn<br/>
+                    <!-- <label for ="seek">Seek:</label><br/> -->
+                    <input type="text" name="seek" id="seek"/><br />
+
+                    <input type="submit" value="Seek" class="button2"/>
+
+                </form>
+                <div id="results" class="seek-form">
+                    <button id="toggleButton">Hide</button>
+                    <div id="resultList" >This is where results will go</div>
+
+                </div>
+                <br>
+
+            </section>
+            <section>
+             <!--   <div id="adds" class="adds">
+                    <h3>Topp List </h3><br/>
+                    <img src="img/book/450x450 20.jpg" alt="Logo" width="100" height="150" class="logo-image"> 
+                    <img src="img/book/0801075254.jpg" alt="Logo" width="100" height="150" class="logo-image"> 
+                    <img src="img/book/1250158060.jpg" alt="Logo" width="100" height="150" class="logo-image">
+                </div>
+              -->
+            </section>
+        </div>
+
+        <footer>
+            &copy; 2018 Tommy Steger
+        </footer>
+        <script  src="js/jquery-3.2.1.min.js"></script>
+        <script  src="js/lib.js"></script>
+    </body>
+</html>

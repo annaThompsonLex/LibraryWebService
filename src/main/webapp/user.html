@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>LibraryOfBooks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/css2.css"/>
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <ul>
+
+                    <li><a href = "user.html">User Managment page</a></li>	
+                    <li><a href = "book.html">Book Managment page</a></li>
+                    <li><a href = "libseek.html">Library page</a></li>
+                </ul>
+            </nav>
+            <div><img src="img/logo2.png" alt="Logo" class="logo-image"> </div>
+        </header>
+        <h2 class="rubrik">Add users</h2>
+        <section id="main">
+            <form action="http://wilder.azurewebsites.net/echo" method="POST" class="basic-form" >
+                <label for ="firstName" class="input-label">Firstname:</label>
+                <input type="text" name="firstName" id="firstName"/><br />
+                <label for ="lastName" class="input-label">Lastname:  </label>
+                <input type="text" name="lastName" id="lastName"/><br />
+                <label for ="email" class="input-label">Email:</label>
+                <input type="text" name="email" id="email"/><br />
+                <label for ="password" class="input-label">Password:  </label>
+                <input type="text" name="password" id="password"/><br />
+                <br/>
+                <input type="submit" value="Skicka" class="button1"/>
+                <input type="reset" value="Avbryt" class="button1" />
+
+            </form>
+            <div id="results" class="seek-form">
+                
+                <div id="resultList" >Add a new user to the library</div>
+
+            </div>
+            <br>
+
+        </section>
+
+
+
+        <footer>
+            &copy; 2018 Tommy Steger
+        </footer>
+        <script  src="js/jquery-3.2.1.min.js"></script>
+        <script  src="js/user.js"></script>
+    </body>
+</html>

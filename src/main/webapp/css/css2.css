@@ -1,0 +1,185 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-Jan-2018, 14:04:22
+    Author     : User
+*/
+
+* {font-family:verdana}
+header,footer {
+    background-color: lightgray;
+    /* border: solid 1px black;*/
+    padding: 15px;
+    border-radius: 3px;
+
+}
+header nav {
+    float: right;
+    margin-right:    100px;
+    display: inline;
+}
+
+html {
+    width: 989px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 5px;
+    background-image: url("../img/books2.jpg");
+}
+body {
+    font-family: Segoe UI, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: lightgoldenrodyellow;
+
+}
+#main {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    color: #202020;
+    margin: 30px 10px 30px 10px;
+    padding: 15px;
+    display: flex;
+}
+.basic-form {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    color: #202020;
+    width: 450px;
+    padding: 15px;
+}
+.select{
+    padding: 2px;
+    font-size: 16px;
+}
+#seek {
+   width: 347px;
+   margin: 10px 0px 10px 0px;
+}
+.seek-form {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    color: #202020;
+    width: 450px;
+    padding: 15px;
+  
+}
+
+.logo-image {
+    border-radius: 5px;
+}
+.input-label {
+    width: 150px;
+    padding: 5px;
+    display: inline-block;
+}
+.button1 {
+    background-color: lemonchiffon;
+    padding: 10px;
+    border-width: 1px;
+    font-size: large;
+    width: 172px;
+
+
+}
+#toggleButton {
+    background-color: lemonchiffon;
+    padding: 10px;
+    border-width: 1px;
+    font-size: large;
+    width: 450px;
+}
+.button2 {
+    background-color: lemonchiffon;
+    padding: 10px;
+    border-width: 1px;
+    font-size: large;
+    width: 172px;
+    display:      block;
+    margin-left:  auto;
+    
+
+}
+.seek-results {
+    padding: 2px;
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+}
+#adds {   
+    position:relative;
+    width: 350px;
+    height: 225px;
+    border-radius: 5px;
+    left: 550px;
+    bottom:   290px;
+    border: 1px solid wheat;
+}
+#resultList {
+    font-size: 14px;
+    display: flex;
+    
+    flex-wrap: wrap;
+}
+.result {
+    margin: 1px;
+    border: 1px solid #888;
+    background-color: lightyellow;
+    width: 220px;
+}
+.result .title {
+    margin: 5px;
+    font-weight: bold;
+    
+    border-radius: 3px;
+    background-color: blanchedalmond;
+    
+    
+    height: 1em; /* so overflow hidden works and keeps text on one row */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+.pic {
+    margin-left: 5px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: text-top;
+   
+    
+}
+.infotext {
+    
+    
+    border: 1px solid lightgrey;
+    margin: 10px;
+    
+    
+}
+.highlight {
+    background-color: blanchedalmond;
+}
+.flex-container {
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+.rubrik {
+    margin: 10px; 
+}
+.blue {
+    color: blue;
+    animation: fadein 2s;
+}
+.red {
+    color: red;
+    animation: fadein 2s;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

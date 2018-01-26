@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>LibraryOfBooks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/css2.css"/>
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href = "user.html">User Managment page</a></li>	
+                    <li><a href = "book.html">Book Managment page</a></li>
+                    <li><a href = "libseek.html">Library page</a></li>
+                </ul>
+            </nav>
+            <div><img src="img/logo2.png" alt="Logo" class="logo-image"> </div>
+        </header>
+        <h2 class="rubrik">Add books</h2>
+        <section id="main">
+            <form action="http://wilder.azurewebsites.net/echo" method="POST" class="basic-form" >
+                <label for ="isbn" class="input-label">Isbn:</label>
+                <input type="text" name="isbn" id="isbn" required/><br />
+                <label for ="title" class="input-label">Title:  </label>
+                <input type="text" name="title" id="titel"/><br />
+                <label for ="author" class="input-label">Author:</label>
+                <input type="text" name="author" id="author"/><br />
+                <label for ="genre" class="input-label">Genre:  </label>
+                <input type="text" name="genre" id="genre"/><br />
+                <label for ="shelf" class="input-label">Shelf:  </label>
+                <input type="text" name="shelf" id="shelf"/><br />
+                <label for ="copies" class="input-label">Copies:</label>
+                <input type="text" name="copies" id="copies" required/><br />
+                <label for ="picUrl" class="input-label">PicUrl:</label>
+                <input type="url" name="picUrl" id="picUrl" required/><br />
+                <br/>
+                <input type="submit" value="Skicka" class="button1"/>
+                <input type="reset" value="Avbryt" class="button1" />
+
+            </form>
+            <div id="results" class="seek-form">
+                
+                <div id="resultList" >Add a new book to the library</div>
+
+            </div>
+
+            <br>
+
+        </section>
+        <!--   <section>
+               <div id="adds" class="adds">
+                   <h3>Topp List </h3><br/>
+                   <img src="img/book/0525562516.jpg" alt="Logo" width="100" height="150" class="logo-image"> 
+                   <img src="img/book/0801075254.jpg" alt="Logo" width="100" height="150" class="logo-image"> 
+                   <img src="img/book/1250158060.jpg" alt="Logo" width="100" height="150" class="logo-image">
+               </div>
+               
+           </section>
+        -->
+
+        <footer>
+            &copy; 2018 Tommy Steger
+        </footer>
+        <script  src="js/jquery-3.2.1.min.js"></script>
+        <script  src="js/book.js"></script>
+    </body>
+</html>
